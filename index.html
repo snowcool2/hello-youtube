@@ -1,56 +1,114 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <title>원클릭으로 여러 사이트 열기</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding-top: 50px;
-    }
-    button {
-      padding: 1em 2em;
-      font-size: 1.2em;
-      cursor: pointer;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>원클릭으로 여러 사이트 열기</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 1em 2em;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .message {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .instructions {
+            font-size: 1.2em;
+            color: #34495e;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #2980b9;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-  <h1>📂 링크 한 번에 열기</h1>
-  <p>아래 버튼을 누르면 여러 사이트가 한꺼번에 열립니다.</p>
-  <button onclick="openMultipleUrls()">열기</button>
 
-  <script>
+<div class="container">
+    <h1>📂 링크 한 번에 열기</h1>
+    <p>아래 버튼을 누르면 여러 사이트가 한꺼번에 열립니다.</p>
+    <button onclick="openMultipleUrls()">열기</button>
+
+    <div class="message">
+        📢 **팝업 및 리디렉션을 허용해주세요!** 📢
+    </div>
+    <div class="instructions">
+        크롬 브라우저에서 팝업과 리디렉션을 **허용**해야 여러 개의 사이트가 한 번에 열립니다.
+        <br><br>
+        설정 변경은 주소창 왼쪽의 **<span class="highlight">자물쇠 아이콘</span>** 클릭 후,
+        "팝업 및 리디렉션"을 **<span class="highlight">허용</span>**으로 설정해 주세요!
+    </div>
+</div>
+
+<script>
     function openMultipleUrls() {
-      const urls = [
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxGYTYcbc4itTwNQ8wQ7giVgpQrgrp9lDI",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxYHqSr23YiJY7jH6y6vXE0d9HwmQi-CCO",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxcAfVkoiJD7H3GeFbt6SlnQwMvpDxdpJ7",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxpMlCEoSNkp862dwi4XPB4BfoVbEIQmI5",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=Ugkx6BjuG9IweDuGZTVsyqSeadq81ELvhwoH",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=Ugkx2m5z62m66avhTjSfHMeSweP0e6fxiMOp",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxwffdLCxr86guWg1di5N2sv3HXZsWaxQj",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxsDAK6KvEDB2yPxToTqcg7tYoDvQ83TsD",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxYY4FUDmnB6l7LLCeMMCUY0Wacq_fOAzH",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxV3V9qqK3AExN09QzwA3MEHcfMtbZ6JI3",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxdVFBjn5iZZRQDOwFEm1uU6Eebe1leJ_6",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxE7S9xVJRYJteq5FxYitSmvWOUzdK0oPC",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxJWw-22WGNOf4V13Sl8T0jSMs8tMn6sV0",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=Ugkx53Sh5JIdjsXlPt2TRObV56UgW2b-v6c9",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=Ugkxw2BNUju4C_C_xQHR1IN4Xm6BEra4hC4a",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxFT2ER5YAbyuOuydvJruDxDEcNjz-TPj4",
-        "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=Ugkxbuhhy_SMhAsmC29gLRLhVjZkEGWkI2II"
-      ];
-      urls.forEach(url => window.open(url, '_blank'));
+        const urls = [
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxGYTYcbc4itTwNQ8wQ7giVgpQrgrp9lDI",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxYHqSr23YiJY7jH6y6vXE0d9HwmQi-CCO",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxcAfVkoiJD7H3GeFbt6SlnQwMvpDxdpJ7",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxpMlCEoSNkp862dwi4XPB4BfoVbEIQmI5",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=Ugkx6BjuG9IweDuGZTVsyqSeadq81ELvhwoH",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=Ugkx2m5z62m66avhTjSfHMeSweP0e6fxiMOp",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxwffdLCxr86guWg1di5N2sv3HXZsWaxQj",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxsDAK6KvEDB2yPxToTqcg7tYoDvQ83TsD",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxYY4FUDmnB6l7LLCeMMCUY0Wacq_fOAzH",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxV3V9qqK3AExN09QzwA3MEHcfMtbZ6JI3",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxdVFBjn5iZZRQDOwFEm1uU6Eebe1leJ_6",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxE7S9xVJRYJteq5FxYitSmvWOUzdK0oPC",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxJWw-22WGNOf4V13Sl8T0jSMs8tMn6sV0",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=Ugkx53Sh5JIdjsXlPt2TRObV56UgW2b-v6c9",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=Ugkxw2BNUju4C_C_xQHR1IN4Xm6BEra4hC4a",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=UgkxFT2ER5YAbyuOuydvJruDxDEcNjz-TPj4",
+            "https://www.youtube.com/channel/UC0M-_02RJqMlGTKUjF1WhJg/community?lb=Ugkxbuhhy_SMhAsmC29gLRLhVjZkEGWkI2II"
+        ];
+        urls.forEach(url => window.open(url, '_blank'));
     }
-  </script>
+
+    // 팝업 차단 여부를 확인하는 부분
+    window.onload = function() {
+        setTimeout(function() {
+            // 팝업이 차단된 경우
+            if (window.open("about:blank").closed) {
+                document.querySelector('.message').innerHTML = "⚠️ 팝업이 차단되었습니다! 팝업을 허용해주세요.";
+            }
+        }, 1000);
+    }
+</script>
+
 </body>
 </html>
