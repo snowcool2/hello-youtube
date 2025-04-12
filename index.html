@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>원클릭으로 여러 사이트 열기</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    button {
+      padding: 1em 2em;
+      font-size: 1.2em;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📂 링크 한 번에 열기</h1>
+  <p>아래 버튼을 누르면 여러 사이트가 한꺼번에 열립니다.</p>
+  <button onclick="openMultipleUrls()">열기</button>
+
+  <script>
+    function openMultipleUrls() {
+      const urls = [
+        "https://naver.com",
+        "https://nate.com",
+        "https://google.com"
+      ];
+      urls.forEach(url => window.open(url, '_blank'));
+    }
+  </script>
+</body>
+</html>
