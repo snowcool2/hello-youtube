@@ -98,19 +98,6 @@
       ];
       urls.forEach(url => window.open(url, '_blank'));
     }
-
-    // 팝업 차단 여부를 확인하는 부분
-    window.onload = function() {
-      setTimeout(function() {
-        // 팝업 차단 확인 방법을 수정
-        var testPopup = window.open("about:blank", "test", "width=1,height=1");
-        if (!testPopup || testPopup.closed || testPopup.closed === undefined) {
-          document.querySelector('.message').innerHTML = "⚠️ 팝업이 차단되었습니다! 팝업을 허용해주세요.";
-        } else {
-          testPopup.close();
-        }
-      }, 1000);
-    }
   </script>
 
 </body>
